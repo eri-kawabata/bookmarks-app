@@ -11,11 +11,9 @@ try {
     ]);
     $offset = ($page - 1) * $limit;
 
-    // ユニークなカテゴリと著者を取得
     $categories = $pdo->query('SELECT DISTINCT category FROM books WHERE category IS NOT NULL')->fetchAll(PDO::FETCH_ASSOC);
     $authors = $pdo->query('SELECT DISTINCT author FROM books')->fetchAll(PDO::FETCH_ASSOC);
 
-    // 本のデータ取得クエリ
     $sql = 'SELECT * FROM books WHERE 1=1';
     $params = [];
 
@@ -46,7 +44,6 @@ try {
 
     $books = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // 総件数取得
     $countSql = 'SELECT COUNT(*) FROM books WHERE 1=1';
     $countParams = [];
 
@@ -90,7 +87,6 @@ try {
     <div class="container">
         <h1>お気に入りの本</h1>
 
-        <!-- 検索フォーム -->
         <form action="index.php" method="GET" class="search-form">
             <input type="text" name="search" placeholder="本を検索" value="<?= htmlspecialchars($search) ?>">
             <select name="category">
@@ -112,12 +108,10 @@ try {
             <button type="submit" class="button">検索</button>
         </form>
 
-        <!-- 本を追加するボタン -->
         <div class="add-button-container">
             <a href="add.php" class="button add-button">本を追加する</a>
         </div>
 
-        <!-- 本リスト -->
         <ul class="list-group">
             <?php if (empty($books)): ?>
                 <li class="list-group-item" style="text-align: center; color: #CDA04F;">
@@ -140,7 +134,6 @@ try {
             <?php endif; ?>
         </ul>
 
-        <!-- ページネーション -->
         <div class="pagination">
             <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                 <a href="index.php?page=<?= $i ?>&search=<?= htmlspecialchars($search) ?>&category=<?= htmlspecialchars($category) ?>&author=<?= htmlspecialchars($author) ?>" 
@@ -151,8 +144,7 @@ try {
         </div>
     </div>
 
-    <!-- 削除モーダル -->
-    <div id="modal" class="modal" style="display: none;">
+    <div id="modal" class="modal">
         <div class="modal-content">
             <p>本当に削除しますか？</p>
             <form id="deleteForm" method="POST" action="delete.php">
@@ -173,15 +165,19 @@ try {
             document.getElementById('modal').style.display = 'none';
         }
 
-        // 外部クリックでモーダルを閉じる
         window.onclick = function(event) {
             const modal = document.getElementById('modal');
             if (event.target === modal) {
                 closeModal();
             }
         };
+
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
-
 
