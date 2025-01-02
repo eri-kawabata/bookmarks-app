@@ -157,22 +157,26 @@ try {
 
     <script>
         function showModal(id) {
-            document.getElementById('modal').style.display = 'flex';
+            const modal = document.getElementById('modal');
+            modal.style.display = 'flex'; // フレックスで表示
             document.getElementById('deleteId').value = id;
         }
 
         function closeModal() {
-            document.getElementById('modal').style.display = 'none';
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none'; // 非表示
         }
 
-        window.onclick = function(event) {
+        // 外部クリックでモーダルを閉じる
+        window.onclick = function (event) {
             const modal = document.getElementById('modal');
             if (event.target === modal) {
                 closeModal();
             }
         };
 
-        window.addEventListener('keydown', function(event) {
+        // Escキーでモーダルを閉じる
+        window.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 closeModal();
             }
@@ -180,4 +184,3 @@ try {
     </script>
 </body>
 </html>
-
