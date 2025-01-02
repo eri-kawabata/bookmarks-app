@@ -137,24 +137,21 @@ h1 {
     transform: scale(1.05);
 }
 
-.button-edit {
-    background: #325675;
-    width: 80px;
-    text-align: center;
-}
-
+.button-edit,
 .button-delete {
-    background: #8B0000;
-    width: 80px;
+    background: #325675;
+    color: #ffffff;
+    width: 100px;
+    /* 統一された幅 */
     text-align: center;
 }
 
-.button-edit:hover {
-    background: #0C2948;
-}
-
+.button-edit:hover,
 .button-delete:hover {
-    background: #B22222;
+    background: #0C2948;
+    /* ホバー時の色 */
+    transform: scale(1.05);
+    /* ホバー時の拡大 */
 }
 
 .pagination {

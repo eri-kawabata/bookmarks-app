@@ -144,7 +144,7 @@ try {
         </div>
     </div>
 
-    <div id="modal" class="modal">
+    <div id="modal" class="modal" style="display: none;">
         <div class="modal-content">
             <p>本当に削除しますか？</p>
             <form id="deleteForm" method="POST" action="delete.php">
@@ -158,13 +158,13 @@ try {
     <script>
         function showModal(id) {
             const modal = document.getElementById('modal');
-            modal.style.display = 'flex'; // フレックスで表示
+            modal.style.display = 'flex'; // モーダルを表示
             document.getElementById('deleteId').value = id;
         }
 
         function closeModal() {
             const modal = document.getElementById('modal');
-            modal.style.display = 'none'; // 非表示
+            modal.style.display = 'none'; // モーダルを非表示
         }
 
         // 外部クリックでモーダルを閉じる
