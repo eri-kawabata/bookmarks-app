@@ -151,6 +151,7 @@ try {
         </div>
     </div>
 
+    <!-- 削除モーダル -->
     <div id="modal" class="modal" style="display: none;">
         <div class="modal-content">
             <p>本当に削除しますか？</p>
@@ -171,6 +172,14 @@ try {
         function closeModal() {
             document.getElementById('modal').style.display = 'none';
         }
+
+        // 外部クリックでモーダルを閉じる
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
     </script>
 </body>
 </html>
