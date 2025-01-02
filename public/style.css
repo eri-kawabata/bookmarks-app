@@ -61,8 +61,7 @@ h1 {
 .search-form button {
     padding: 14px 20px;
     background: linear-gradient(to right, #CDA04F, #D6B562);
-    color: #FFFFFF;
-    /* 常に白文字 */
+    color: #ffffff;
     font-size: 16px;
     border: none;
     border-radius: 8px;
@@ -75,6 +74,7 @@ h1 {
 .search-form button:hover {
     transform: scale(1.05);
     background: linear-gradient(to right, #D6B562, #CDA04F);
+    color: #0C2948;
 }
 
 /* 追加ボタンコンテナ */
@@ -107,18 +107,21 @@ h1 {
 }
 
 .list-group-item a {
-    color: #FFFFFF;
-    /* 常に白文字 */
+    color: #0C2948;
     font-weight: bold;
     text-decoration: none;
+}
+
+.list-group-item a:hover {
+    color: #CDA04F;
+    text-decoration: underline;
 }
 
 /* ボタン */
 .button {
     padding: 14px 20px;
     background: linear-gradient(to right, #CDA04F, #D6B562);
-    color: #FFFFFF;
-    /* 常に白文字 */
+    color: #ffffff;
     border-radius: 8px;
     font-size: 14px;
     font-weight: bold;
@@ -130,6 +133,28 @@ h1 {
 
 .button:hover {
     background: linear-gradient(to right, #D6B562, #CDA04F);
+    transform: scale(1.05);
+    color: #0C2948;
+}
+
+/* 編集・削除ボタン */
+.button-edit,
+.button-delete {
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #325675;
+    border: 1px solid #CDA04F;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-edit:hover,
+.button-delete:hover {
+    background: #CDA04F;
+    color: #ffffff;
     transform: scale(1.05);
 }
 
@@ -143,8 +168,7 @@ h1 {
     padding: 10px 15px;
     margin: 5px;
     background: #CDA04F;
-    color: #FFFFFF;
-    /* 常に白文字 */
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -152,6 +176,7 @@ h1 {
 
 .pagination a:hover {
     background: #D6B562;
+    color: #0C2948;
 }
 
 /* レスポンシブ対応 */
@@ -168,6 +193,12 @@ h1 {
     .button {
         padding: 12px 18px;
         font-size: 14px;
+    }
+
+    .button-edit,
+    .button-delete {
+        width: 100%;
+        text-align: center;
     }
 
     .list-group-item {
