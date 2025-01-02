@@ -13,8 +13,8 @@ body {
 .container {
     max-width: 900px;
     margin: 40px auto;
-    padding: 40px;
-    background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+    padding: 30px;
+    background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
@@ -23,8 +23,8 @@ body {
 h1 {
     text-align: center;
     color: #CDA04F;
-    font-size: 2.6em;
-    margin-bottom: 30px;
+    font-size: 2.4em;
+    margin-bottom: 20px;
     font-weight: bold;
 }
 
@@ -32,58 +32,83 @@ h1 {
 .search-form {
     display: flex;
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .search-form input,
 .search-form select {
     flex: 1;
-    padding: 14px;
+    padding: 10px;
     font-size: 16px;
     border: 1px solid #7793AB;
     border-radius: 8px;
-    background: #ffffff;
+    background: #f9f9f9;
     color: #0C2948;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-width: 200px;
+    min-width: 150px;
 }
 
 .search-form button {
-    padding: 14px 20px;
+    padding: 10px 16px;
     background: linear-gradient(to right, #CDA04F, #D6B562);
     color: #ffffff;
     font-size: 16px;
     border: none;
     border-radius: 8px;
     font-weight: bold;
-    transition: transform 0.2s ease, background-color 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.search-form button:hover {
+    transform: scale(1.05);
+    background: #D6B562;
 }
 
 /* 追加ボタン */
 .add-button-container {
     text-align: right;
-    margin: 20px 0;
+    margin-bottom: 20px;
+}
+
+.add-button {
+    padding: 10px 16px;
+    background: linear-gradient(to right, #325675, #7793AB);
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.add-button:hover {
+    transform: scale(1.05);
+    background: #7793AB;
 }
 
 /* リスト */
 .list-group {
     margin-top: 20px;
+    padding: 0;
+    list-style: none;
 }
 
 .list-group-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    margin-bottom: 15px;
-    background: #f7f7f7;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
     border: 1px solid #E4E7EB;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .list-group-item:hover {
@@ -91,33 +116,45 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.list-group-item a {
+    color: #325675;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.list-group-item a:hover {
+    color: #CDA04F;
+}
+
 /* ボタン共通スタイル */
 .button {
-    padding: 12px 16px;
+    padding: 10px 16px;
     font-size: 14px;
     font-weight: bold;
     color: #ffffff;
     border-radius: 8px;
     border: none;
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    transition: transform 0.2s, background-color 0.3s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
 
 .button:hover {
     transform: scale(1.05);
-    background: #CDA04F;
 }
 
 /* 編集・削除ボタン */
 .button-edit {
     background: #325675;
-    width: 90px;
+    width: 80px;
+    text-align: center;
 }
 
 .button-delete {
     background: #8B0000;
-    width: 90px;
+    width: 80px;
+    text-align: center;
 }
 
 .button-edit:hover {
@@ -135,13 +172,13 @@ h1 {
 }
 
 .pagination a {
-    padding: 10px 15px;
-    margin: 5px;
+    padding: 8px 12px;
+    margin: 3px;
     background: #CDA04F;
     color: #ffffff;
-    text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .pagination a:hover {
@@ -156,9 +193,8 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
     display: none;
-    /* 初期状態で非表示 */
+    background: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -166,12 +202,17 @@ h1 {
 
 .modal-content {
     background: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
     width: 90%;
     max-width: 400px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #0C2948;
 }
 
 .modal-content button {
