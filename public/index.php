@@ -132,8 +132,8 @@ try {
                             </a>
                         </div>
                         <div>
-                            <a href="edit.php?id=<?= htmlspecialchars($book['id']) ?>" class="button" style="margin-right: 10px;">編集</a>
-                            <button class="button" onclick="showModal(<?= $book['id'] ?>)">削除</button>
+                            <a href="edit.php?id=<?= htmlspecialchars($book['id']) ?>" class="button button-edit">編集</a>
+                            <button class="button button-delete" onclick="showModal(<?= $book['id'] ?>)">削除</button>
                         </div>
                     </li>
                 <?php endforeach; ?>
@@ -156,7 +156,7 @@ try {
             <p>本当に削除しますか？</p>
             <form id="deleteForm" method="POST" action="delete.php">
                 <input type="hidden" name="id" id="deleteId">
-                <button type="submit" class="button" style="background-color: #CDA04F;">削除する</button>
+                <button type="submit" class="button button-delete">削除する</button>
                 <button type="button" class="button" onclick="closeModal()">キャンセル</button>
             </form>
         </div>
