@@ -1,0 +1,178 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0C2948, #325675);
+    color: #E8EEF1;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* コンテナ */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ヘッダー */
+h1 {
+    text-align: center;
+    color: #CDA04F;
+    font-size: 2.6em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* 検索フォーム */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.search-form input,
+.search-form select {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #7793AB;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0C2948;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+    border-color: #CDA04F;
+    box-shadow: 0 0 8px #CDA04F;
+    outline: none;
+}
+
+.search-form button {
+    padding: 14px 20px;
+    background: linear-gradient(to right, #CDA04F, #D6B562);
+    color: #FFFFFF;
+    /* 常に白文字 */
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #D6B562, #CDA04F);
+}
+
+/* 追加ボタンコンテナ */
+.add-button-container {
+    text-align: right;
+    margin: 20px 0;
+}
+
+/* リスト */
+.list-group {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #f7f7f78e;
+    border: 1px solid #E4E7EB;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.list-group-item a {
+    color: #FFFFFF;
+    /* 常に白文字 */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ボタン */
+.button {
+    padding: 14px 20px;
+    background: linear-gradient(to right, #CDA04F, #D6B562);
+    color: #FFFFFF;
+    /* 常に白文字 */
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.button:hover {
+    background: linear-gradient(to right, #D6B562, #CDA04F);
+    transform: scale(1.05);
+}
+
+/* ページネーション */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    margin: 5px;
+    background: #CDA04F;
+    color: #FFFFFF;
+    /* 常に白文字 */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background: #D6B562;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .search-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .button {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
